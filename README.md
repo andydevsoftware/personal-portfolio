@@ -7,7 +7,7 @@ This project showcases my frontend skills with a focus on clean layout, responsi
 
 ## ✨ Live Demo
 
-🔗 Live Demo: In progress
+🔗 Live Demo: https://andydevsoftware.vercel.app/
 
 ![Desktop](image.png)
 ![Mobile](image-1.png)
@@ -170,12 +170,14 @@ npm start
 
 This project was built to:
 
+```
 ✅ Demonstrate strong React, TypeScript, and Next.js skills
 ✅ Showcase modern UI/UX design capabilities
 ✅ Implement scalable component architecture
 ✅ Create a polished and professional user experience
 ✅ Manage theme state and persistence
 ✅ Serve as a flagship project in my portfolio
+```
 
 ---
 
@@ -206,6 +208,8 @@ This project was built to:
 Andy Sebastian Avendaño Ramirez
 Web Developer
 
+```
 💼 LinkedIn: https://www.linkedin.com/in/andy-sebastian-avenda%C3%B1o-ramirez-3a5993337/
 🐱 GitHub: https://github.com/andydevsoftware
-🌐 Portfolio: In progress
+🌐 Portfolio: https://andydevsoftware.vercel.app/
+```
