@@ -1,26 +1,247 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(11, 11, 11);
+  color: #ededed;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema claro */
+html.light body {
+  background: rgb(255, 255, 255);
+  color: rgb(23, 23, 23);
+}
+
+/* Ajustes para el tema claro en elementos específicos */
+html.light {
+  --text-primary: rgb(23, 23, 23);
+  --text-secondary: rgb(82, 82, 82);
+  --border-color: rgb(229, 229, 229);
+  --bg-secondary: rgb(250, 250, 250);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+.font-geist {
+  font-family: var(--font-geist-sans);
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono);
+}
+
+html.light .border-neutral-800 {
+  border-color: rgb(229, 229, 229);
+}
+
+html.light .bg-neutral-900\/30,
+html.light .bg-neutral-950\/30 {
+  background-color: rgb(250, 250, 250);
+}
+
+html.light .text-neutral-300,
+html.light .text-neutral-400 {
+  color: rgb(82, 82, 82);
+}
+
+html.light .text-neutral-500 {
+  color: rgb(115, 115, 115);
+}
+
+html.light header {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html.light .bg-neutral-950 {
+  background-color: rgb(250, 250, 250);
+}
+
+html.light footer {
+  background-color: rgb(255, 255, 255);
+}
+
+html.light .bg-neutral-900\/60 {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+html.light .border-neutral-800\/50 {
+  border-color: rgb(229, 229, 229) !important;
+}
+
+/* Badge "updated" en tema claro */
+html.light .bg-neutral-900\/80 {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+html.light .border-neutral-800\/60 {
+  border-color: rgb(212, 212, 212) !important;
+}
+
+html.light .bg-neutral-950\/30 {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+html.light .border-neutral-800\/50 {
+  border-color: rgb(229, 229, 229) !important;
+}
+
+html.light .bg-neutral-800 {
+  background-color: rgb(229, 229, 229) !important;
+}
+
+html.light .bg-neutral-500 {
+  background-color: rgb(163, 163, 163) !important;
+}
+
+@layer utilities {
+  #projects .group > .relative.z-10 {
+    padding: 1.5rem !important;
+  }
+
+  #projects .group > .relative.z-10 > .flex:first-child {
+    margin-bottom: 1rem !important;
+  }
+
+  #projects .group .flex-shrink-0:has(.text-\[26px\]) {
+    font-size: 1.5rem !important;
+  }
+
+  #projects .group .text-\[13px\].text-neutral-400 {
+    margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+section#projects div.group div.relative.z-10 {
+  padding: 1.5rem !important;
+}
+
+section#projects div.group div.relative.z-10 > div.flex:first-child {
+  margin-bottom: 1rem !important;
+}
+
+section#projects div.group div.text-\[26px\] {
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+}
+
+section#projects div.group p.text-\[13px\] {
+  margin-bottom: 1rem !important; /* 16px */
+  line-height: 1.5 !important;
+}
+
+/* Ajustes responsive para móviles */
+@media (max-width: 640px) {
+  main .max-w-3xl {
+    padding-left: 1.5rem !important; /* 24px - más espacio */
+    padding-right: 1.5rem !important;
+  }
+
+  header nav {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    gap: 0.5rem !important;
+  }
+
+  header nav > div:last-child {
+    gap: 0.75rem !important;
+  }
+
+  header nav > a {
+    font-size: 0.875rem !important;
+  }
+
+  header nav svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  /* Padding vertical del header reducido en móvil */
+  header nav {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  header.sticky nav {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  #projects .project-card-tags {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    margin-left: -4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+  }
+
+  #projects .project-card-tags::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  #projects .project-card-tags > div {
+    display: flex;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  /* Footer centrado y apilado en móviles */
+  footer .flex.justify-between {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 0.75rem !important;
+  }
+
+  footer .flex.justify-between > div:last-child {
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+  }
+
+  footer .flex.justify-between > div:last-child span:nth-child(2) {
+    display: none; /* Ocultar el • separador */
+  }
+
+  /* Footer con mismo padding lateral */
+  footer .max-w-3xl {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Gaps entre secciones más compactos en móvil */
+  main > div {
+    gap: 3rem !important; /* 48px entre secciones */
+  }
+}
+
+/* Invierte iconos de MySQL y Git en la sección de technologies en modo claro */
+html.light #technologies img[alt="MySQL"],
+html.light #technologies img[alt="Git"] {
+  filter: invert(1);
+}
+
+/* Ajustes responsive adicionales  */
+@media (max-width: 768px) and (min-width: 641px) {
+  main .max-w-3xl {
+    padding-left: 2rem !important; /* 32px */
+    padding-right: 2rem !important;
+  }
+
+  header nav {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
 }
