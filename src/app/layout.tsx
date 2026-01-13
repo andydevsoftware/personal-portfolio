@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata = {
   title: "Andy Avendaño - Developer Web",
   description: "Portfolio de Andy - Desarrollador Web",
+  verification: {
+    google: "_BRN5ohpiwBvApGIYjRenjdaPpZm-6dwQQGS0Qykkts",
+  },
   icons: {
     icon: "/favicon_dev.ico",
     shortcut: "/favicon_dev.ico",
