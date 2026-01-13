@@ -4,8 +4,19 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata = {
-  title: "Andy Avendaño - Developer Web",
-  description: "Portfolio de Andy - Desarrollador Web",
+  title: "Andy Avendaño | Frontend Developer",
+  description:
+    "Frontend Developer especializado en React, Next.js y Tailwind CSS. Portafolio con proyectos web modernos, responsivos y enfocados en UI/UX.",
+  openGraph: {
+    title: "Andy Avendaño | Frontend Developer",
+    description:
+      "Frontend Developer especializado en React, Next.js y Tailwind CSS. Portafolio con proyectos web modernos, responsivos y enfocados en UI/UX.",
+    url: "https://andydevsoftware.vercel.app/",
+    siteName: "Andy Avendaño · Software Developer",
+    locale: "es_PE",
+    type: "website",
+  },
+
   verification: {
     google: "_BRN5ohpiwBvApGIYjRenjdaPpZm-6dwQQGS0Qykkts",
   },
